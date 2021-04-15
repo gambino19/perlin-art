@@ -209,7 +209,7 @@ def grid(n=None, rows=None, columns=None, margin=None,
         
 
 #Create Here!
-pshapes = grid(rows=3, columns=5, margin=250, xbounds=150, ybounds=50) # Perlin Square information to display
+pshapes = grid(n=3, margin=250) # Perlin Square information to display
 delay = 30 # Delay in Milliseconds to draw
 capture = True # Record to 'output.avi'
 
