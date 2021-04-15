@@ -180,7 +180,7 @@ def grid(n=None, rows=None, columns=None, margin=None,
     Handles creating the grid of Perlin Squares
     
     Keyword Arguments;
-        b (int): Creates n^2 squares in grid
+        n (int): Creates n^2 squares in grid
         rows (int): Rows of Squares
         columns (int): Columns of Squares
         margin (int) Spacing between edges of squares
