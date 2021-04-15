@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Using Perlin noise to create simple, 'random' squares
+Using Perlin noise to create simple, 'random' shapes
 Uses cv2 for canvas and drawing method and noise for perlin noise
 """
 from functools import singledispatchmethod
@@ -232,6 +232,7 @@ while True:
     if cv2.waitKey(delay) & 0xFF == ord('q'): 
         break
 
-out.release()
+if capture:
+    out.release()
 cv2.destroyAllWindows()
 
