@@ -175,7 +175,7 @@ class PShape:
             pline()
 
 def grid(n=None, rows=None, columns=None, margin=None, 
-         xbounds=100, ybounds=100, shape="rectangle"):
+         xbounds=100, ybounds=100, shape="rectangle", lines=100):
     """ 
     Handles creating the grid of Perlin Squares
     
@@ -187,6 +187,7 @@ def grid(n=None, rows=None, columns=None, margin=None,
         xbounds (tuple: int): X-Axis boundaries in which Perlin can move within
         ybounds (tuple: int): Y-Axis boundaries in which Perlin can move within
         shape (str): Shape that will contain the Perlin Noise
+        lines (int): Number of lines to make per each shape
         
     Returns:
         list: Perlin Squares
@@ -203,12 +204,12 @@ def grid(n=None, rows=None, columns=None, margin=None,
     grid =[]
     for x in xspace:
       for y in yspace:
-          grid.extend([PShape((x, y), (x-xbounds, x+xbounds), (y-ybounds, y+ybounds), np.random.randint(20,80), shape=shape)])
+          grid.extend([PShape((x, y), (x-xbounds, x+xbounds), (y-ybounds, y+ybounds), lines, shape=shape)])
     return grid
         
 
 #Create Here!
-pshapes = grid(n=2, margin=300, shape="circle") # Perlin Square information to display
+pshapes = grid(rows=3, columns=5, margin=250, xbounds=150, ybounds=50) # Perlin Square information to display
 delay = 30 # Delay in Milliseconds to draw
 capture = True # Record to 'output.avi'
 
