@@ -208,8 +208,8 @@ def grid(n=None, rows=None, columns=None, margin=None,
         
 
 #Create Here!
-psquares = grid(n=3, margin=200) # Perlin Square information to display
-delay = 10 # Delay in Milliseconds to draw
+pshapes = grid(n=2, margin=300, shape="circle") # Perlin Square information to display
+delay = 30 # Delay in Milliseconds to draw
 capture = True # Record to 'output.avi'
 
 if capture:
@@ -219,8 +219,8 @@ if capture:
 while True:
     _CANVAS = CANVAS.copy()
     # Run all movements on all polygons
-    for psquare in psquares:
-        psquare()
+    for pshape in pshapes:
+        pshape()
         
     # Another alpha tranparency measure
     CANVAS = cv2.addWeighted(CANVAS, 0.5, _CANVAS, 0.5, 0)
